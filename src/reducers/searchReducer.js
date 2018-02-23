@@ -1,4 +1,4 @@
-export const initialState =  { searchValue: 'Ghibli' };
+export const initialState =  { searchValue: 'girl' };
 
 const searchReducer = (state = {...initialState} , action) => {
     switch (action.type) {

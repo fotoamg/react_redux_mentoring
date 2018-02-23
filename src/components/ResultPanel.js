@@ -33,13 +33,17 @@ class ResultPanel extends React.Component {
           shouldComponentUpdate() {
             console.log("ResultPanel shouldComponentUpdate. ");
             return true;
-          }
+          };
+
+          renderHTML = (rawHTML) => React.createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
     render() {
         if (!this.props.item) {
             console.log("Resultpanel no props item.");
             return <div>NO ITEMS</div>
         }
+        let cast = this.props.item._embedded ? this.props.item._embedded.cast : [];
+        console.log("cast ", cast);
         return(
                 <nav className="resultpanel clearfix">
                         <div className="resultpanel__wrapper clearfix">
@@ -65,21 +69,24 @@ class ResultPanel extends React.Component {
                                         &nbsp;
                                     {this.props.item.rating.average ? <span className="resultpanel__wrapper__rightpanel__score">    &nbsp;{this.props.item.rating.average}&nbsp; </span> : ""}
                                 </p>
-                                <p>{this.props.item.premiered} &nbsp; {this.props.item.runtime}&nbsp;min</p>
-
-                                <p>{this.props.item.summary}</p>
-
-
-                                {/* <p>DEBUG: passed id for movie item: {this.props.match.params.resultId}</p>
-                                <p>DEBUG: match: { JSON.stringify(this.props.match)}</p> */}
                                 
+                                <span className="resultpanel__wrapper__rightpanel__time">
+                                    <p>{this.props.item.premiered} &nbsp; {this.props.item.runtime}&nbsp;min</p>
+                                </span>
+
+                                <p>{this.renderHTML(this.props.item.summary)}</p>
+
+                                <p>&nbsp;</p>
+                                <p className="resultpanel__wrapper__rightpanel__cast">
+                                    {cast.length > 0 ? <span>Cast: </span> : ""}
+                                    {cast.map((item, i) => <span key={i}> {item.person.name} &nbsp; </span>)}
+                                </p>
                             </div>
                         </div>
                 </nav>
         )
     };
 }
-
 
 const mapStateToProps = (state) => {
     return {
@@ -93,7 +100,7 @@ const mapStateToProps = (state) => {
 };*/
 
 const getSingleResults = (term) => {
-    const url = `http://api.tvmaze.com/shows/${term}`;
+    const url = `http://api.tvmaze.com/shows/${term}?embed=cast`;
     return axios.get(url)
 };
 

@@ -27,6 +27,17 @@ class BigSearch extends React.Component {
         this.setState({ searchValue: event.target.value });
     }
 
+    handleSearchValueKeyDown(event) {
+        console.log('search value keydown', this.state, event, event.key);
+        const { history } = this.props;
+        if (event.key === 'Enter') {
+            console.log('search value Enter preshed searchValue: ' + this.state.searchValue);
+            this.props.searchClick(this.state.searchValue);
+            history.push('/search/' + this.state.searchValue);
+        }
+     
+    }
+
     render() {
         return(
             <nav className="bigsearch clearfix">
@@ -41,7 +52,8 @@ class BigSearch extends React.Component {
                             <p>FIND YOUR MOVIE</p>
                             <p>
                                 <input type="text"
-                                    value={this.state.searchValue} onChange={(event) => this.handleSearchValueChange(event)}></input>
+                                    value={this.state.searchValue} onChange={(event) => this.handleSearchValueChange(event)}
+                                    onKeyDown={(event) => this.handleSearchValueKeyDown(event)}></input>
                             </p>
                             <p>
                                 <button onClick={(event) => this.props.searchClick(this.state.searchValue)}>

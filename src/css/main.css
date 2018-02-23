@@ -21,26 +21,27 @@ body {
 
 
 .bigsearch {
-    background-image: url(http://media5.starkinsider.com/wordpress/wp-content/uploads/2018/01/Netflix-streaming-vs-traditional-cable.jpg?x28372);
+    /*background-image: url(http://media5.starkinsider.com/wordpress/wp-content/uploads/2018/01/Netflix-streaming-vs-traditional-cable.jpg?x28372);*/
+    background-image: linear-gradient(rgba(20,20,20, .8), rgba(20,20,20, .8)), url("http://media5.starkinsider.com/wordpress/wp-content/uploads/2018/01/Netflix-streaming-vs-traditional-cable.jpg?x28372");
     width: 100%;
     margin: auto;
 }
 
 .bigsearch__wrapper {
     margin: auto;
-    color: magenta;
+    color: #f76591;
     padding: 10px;
 }
 
 .bigsearch__wrapper__header {
     width: 100%;
     margin: auto;
-    color: magenta;
+    color: #f76591;
 }
 
 .bigsearch__wrapper__header a, .bigsearch__wrapper__searchbar button a {
     text-decoration: none;
-    color: magenta;
+    color:#f76591;
 }
 
 .bigsearch__wrapper__searchbar {
@@ -54,10 +55,20 @@ body {
     width: 80%;
     text-align: left;
     background-color: #202020;
+    margin-bottom: 15px;
+    border-bottom: 2px #f76591 solid;
+    line-height: 40px;
+    padding: 0 15px;
+    background: black;
+    color: white;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+  
 }
 
 .resultgrid__resultitem__wrapper {
-    width: 200px;
+  /*  width: 189px;*/
     height: 370px;
     padding: 4px;
     margin: auto;
@@ -106,10 +117,10 @@ body {
 
 
 .resultpanel {
-    background-image: url(http://media5.starkinsider.com/wordpress/wp-content/uploads/2018/01/Netflix-streaming-vs-traditional-cable.jpg?x28372);
+    /*background-image: url(http://media5.starkinsider.com/wordpress/wp-content/uploads/2018/01/Netflix-streaming-vs-traditional-cable.jpg?x28372);*/
+    background-image: linear-gradient(rgba(20,20,20, .8), rgba(20,20,20, .8)), url("http://media5.starkinsider.com/wordpress/wp-content/uploads/2018/01/Netflix-streaming-vs-traditional-cable.jpg?x28372");
     width: 100%;
     background-color: #202020;
-    width: 100%;
     margin: auto;
     color: #E0E0E0;
 }
@@ -126,12 +137,12 @@ body {
 .resultpanel__wrapper__header {
     width: 100%;
     margin: auto;
-    color: magenta;
+    color: #f76591;
 }
 
 .resultpanel__wrapper__header a {
     text-decoration: none;
-    color: magenta;
+    color:#f76591;
 }
 
 .resultpanel__wrapper__leftpanel {
@@ -146,7 +157,7 @@ body {
 
 .resultpanel__wrapper__rightpanel {
     width: 540px;
-    height: 300px;
+    min-height: 300px;
     padding: 4px;
     /*vertical-align: middle;*/
     text-align: left;
@@ -156,8 +167,8 @@ body {
 
 .resultpanel__wrapper__rightpanel__title {
     font-size: 20px;
-    color: magenta;
-    text-transform: uppercase;
+    color: #f76591;
+    /*text-transform: uppercase;*/
 }
 
 .resultpanel__wrapper__rightpanel__score {
@@ -173,4 +184,23 @@ body {
     padding-top: 4px;
     padding-left: 0px;
     padding-right: 0px;
+}
+
+.resultpanel__wrapper__rightpanel__time {
+    font-weight: bold;
+    color:white;
+}
+
+.resultpanel__wrapper__rightpanel__cast {
+    font-weight: lighter;
+    color: grey;
+}
+
+.footer, .footer a {
+    width: 100%;
+    background-color: #333333;
+    color: #f76591;
+    text-decoration: none;
+    padding: 15px;
+    margin: auto;
 }
