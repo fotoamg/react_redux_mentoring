@@ -161,10 +161,16 @@ body {
 }
 
 .resultpanel__wrapper__rightpanel__score {
-    font-size: 20px;
+    font-size: 16px;
     color: #BADA55;
     border: 3px solid #BADA55;
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
+    height: 36px;
+    width: 36px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
 }

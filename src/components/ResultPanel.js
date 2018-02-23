@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router'
 import { connect } from "react-redux";
-import { movieResult, relatedItems } from '../resultmock';
+import axios from 'axios';
 
 class ResultPanel extends React.Component {
         constructor(props) {
@@ -14,11 +14,7 @@ class ResultPanel extends React.Component {
             console.log("ResultPanel WillMount.. ");
             if ( this.props.match && this.props.match.params && this.props.match.params.resultId ) {
                 console.log("ResultPanel WillMount: " + this.props.match.params.resultId);
-                this.props.loadMovie(
-                    {   item: movieResult,
-                        result: relatedItems.results
-                    }
-                );
+                this.props.loadMovie(this.props.match.params.resultId);
             }
             
         }
@@ -30,11 +26,7 @@ class ResultPanel extends React.Component {
             if (nextProps && nextProps.match && nextProps.match.params && nextProps.match.params.resultId &&
                   this.props.match.params.resultId !== nextProps.match.params.resultId) {
                     console.log(" Nextprops not match by resultid! " + nextProps.match.params.resultId);
-                    this.props.loadMovie(
-                        {   item: movieResult,
-                            result: relatedItems.results
-                        }
-                    );
+                    this.props.loadMovie(nextProps.match.params.resultId);
             }
           }
 
@@ -59,8 +51,8 @@ class ResultPanel extends React.Component {
                             <div className="resultpanel__wrapper__leftpanel clearfix">
                                 
                                 <p>
-                                    <img src={"http://image.tmdb.org/t/p/w185/" + this.props.item.poster_path}
-                                        width="185" alt={this.props.item.title}>                  
+                                    <img src={this.props.item.image.medium}
+                                        width="185" alt={this.props.item.name}>                  
                                     </img>
                                 </p>
                             </div>
@@ -68,20 +60,18 @@ class ResultPanel extends React.Component {
                                 
                                 <p>
                                     <span className="resultpanel__wrapper__rightpanel__title">
-                                        {this.props.item.title}
+                                        {this.props.item.name}
                                     </span>
                                         &nbsp;
-                                    <span className="resultpanel__wrapper__rightpanel__score">
-                                        &nbsp;{this.props.item.vote_average}&nbsp;
-                                    </span>
+                                    {this.props.item.rating.average ? <span className="resultpanel__wrapper__rightpanel__score">    &nbsp;{this.props.item.rating.average}&nbsp; </span> : ""}
                                 </p>
-                                <p>{this.props.item.release_date} &nbsp; {this.props.item.runtime}&nbsp;min</p>
+                                <p>{this.props.item.premiered} &nbsp; {this.props.item.runtime}&nbsp;min</p>
 
-                                <p>{this.props.item.overview}</p>
+                                <p>{this.props.item.summary}</p>
 
 
-                                <p>DEBUG: passed id for movie item: {this.props.match.params.resultId}</p>
-                                <p>DEBUG: match: { JSON.stringify(this.props.match)}</p>
+                                {/* <p>DEBUG: passed id for movie item: {this.props.match.params.resultId}</p>
+                                <p>DEBUG: match: { JSON.stringify(this.props.match)}</p> */}
                                 
                             </div>
                         </div>
@@ -95,19 +85,30 @@ const mapStateToProps = (state) => {
     return {
         item: state.item
     };
-  };
+};
 
-  
- const mapDispatchToProps = (dispatch) => {
+/*const getRelatedResults = (term) => {
+    const url = `http://api.tvmaze.com/search/shows?q=${term}/episodes`;
+    return axios.get(url)
+};*/
+
+const getSingleResults = (term) => {
+    const url = `http://api.tvmaze.com/shows/${term}`;
+    return axios.get(url)
+};
+
+const mapDispatchToProps = (dispatch) => {
     return {
-        loadMovie: (obj) => {
-            console.log("loadMovie Action payload: ", obj);
-            dispatch({
-                type: "MOVIE_LOADED",
-                payload: obj
-            });
-
-        }         
+        loadMovie: (id) => {
+            console.log("loadMovie ID: ", id);
+            return getSingleResults(id).then(response => {
+                console.log("MOVIE DATA:", response.data);
+                dispatch({
+                     type: "MOVIE_LOADED",
+                     payload: response.data
+                 });            
+              });  
+        }
     };
 };
 

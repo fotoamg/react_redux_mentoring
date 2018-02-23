@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router'
 import { connect } from "react-redux";
-import result from '../resultmock';
+import axios from 'axios';
 
 class BigSearch extends React.Component {
     constructor(props) {
@@ -62,14 +62,22 @@ const mapStateToProps = (state) => {
     };
 };
 
+const getSearchResults = (term) => {
+    const url = `http://api.tvmaze.com/search/shows?q=${term}`;
+    return axios.get(url)
+};
+  
 const mapDispatchToProps = (dispatch) => {
     return {
         searchClick: (title) => {
             console.log("title: " + title);
-            dispatch({
-                type: "SEARCH",
-                payload: result.results
-            });
+            return getSearchResults(title).then(response => {
+                console.log(response.data);
+                dispatch({
+                     type: "SEARCH",
+                     payload: response.data
+                 });            
+              });
           },
           initState: () => {
             console.log("Bigsearch initState: ");
