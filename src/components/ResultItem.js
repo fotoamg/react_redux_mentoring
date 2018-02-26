@@ -12,11 +12,16 @@ export function ResultItem({item}) {
                     </img>
                 </Link>
             </div>
-            <div className="resultgrid__resultitem__wrapper__title clearfix">
-                <p>{item.name}</p>
+            <div className="resultgrid__resultitem__wrapper__headline clearfix">
+                <div className="resultgrid__resultitem__wrapper__title clearfix">
+                    <span>{item.name}</span>
+                </div>
+                <div className="resultgrid__resultitem__wrapper__premiered clearfix">
+                    <span>{(item.premiered) ? item.premiered.substr(0,4) : ""}</span>
+                </div>
             </div>
             <div className="resultgrid__resultitem__wrapper__genre clearfix">
-                <p>{item.premiered}</p>
+                    <span>{(item.genres && item.genres.length> 0) ? item.genres.toString() : ""}</span>
             </div>
         </div>
     )

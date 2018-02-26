@@ -67,11 +67,11 @@ class ResultPanel extends React.Component {
                                         {this.props.item.name}
                                     </span>
                                         &nbsp;
-                                    {this.props.item.rating.average ? <span className="resultpanel__wrapper__rightpanel__score">    &nbsp;{this.props.item.rating.average}&nbsp; </span> : ""}
+                                    {this.props.item.rating.average ? <span className="resultpanel__wrapper__rightpanel__score">{this.props.item.rating.average}</span> : ""}
                                 </p>
                                 
                                 <span className="resultpanel__wrapper__rightpanel__time">
-                                    <p>{this.props.item.premiered} &nbsp; {this.props.item.runtime}&nbsp;min</p>
+                                    <p>{(this.props.item.premiered) ? this.props.item.premiered.substr(0,4) : ""} &nbsp; {this.props.item.runtime}&nbsp;min</p>
                                 </span>
 
                                 <p>{this.renderHTML(this.props.item.summary)}</p>

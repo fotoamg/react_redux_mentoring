@@ -69,7 +69,7 @@ body {
 
 .resultgrid__resultitem__wrapper {
   /*  width: 189px;*/
-    height: 370px;
+    height: 340px;
     padding: 4px;
     margin: auto;
     /*vertical-align: middle;*/
@@ -116,6 +116,46 @@ body {
 }
 
 
+.resultgrid__resultitem__wrapper__headline {
+    display: block;
+    float: none;
+    padding-top: 5px;
+    /*margin: 5px;*/
+    color: black;
+    width: 180px;
+    /*height: 15px;*/
+}
+
+.resultgrid__resultitem__wrapper__title {
+    display: block;
+    float: left;
+    height: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.resultgrid__resultitem__wrapper__premiered {
+    display: block;
+    float: right;
+    height: 15px;
+}
+.resultgrid__resultitem__wrapper__premiered span {
+    border: solid 1px grey;
+    border-radius: 3px;
+    font-size: 8px;
+    padding-top: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.resultgrid__resultitem__wrapper__genre {
+    padding-top: 5px;
+    text-align: left;
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+
 .resultpanel {
     /*background-image: url(http://media5.starkinsider.com/wordpress/wp-content/uploads/2018/01/Netflix-streaming-vs-traditional-cable.jpg?x28372);*/
     background-image: linear-gradient(rgba(20,20,20, .8), rgba(20,20,20, .8)), url("http://media5.starkinsider.com/wordpress/wp-content/uploads/2018/01/Netflix-streaming-vs-traditional-cable.jpg?x28372");
@@ -156,7 +196,7 @@ body {
 }
 
 .resultpanel__wrapper__rightpanel {
-    width: 540px;
+    max-width: 537px;
     min-height: 300px;
     padding: 4px;
     /*vertical-align: middle;*/
@@ -168,22 +208,31 @@ body {
 .resultpanel__wrapper__rightpanel__title {
     font-size: 20px;
     color: #f76591;
+    vertical-align: middle;
     /*text-transform: uppercase;*/
 }
 
 .resultpanel__wrapper__rightpanel__score {
     font-size: 16px;
     color: #BADA55;
-    border: 3px solid #BADA55;
+    border: 2px solid #BADA55;
     border-radius: 50%;
     height: 36px;
     width: 36px;
     display: inline-block;
     text-align: center;
     vertical-align: middle;
-    padding-top: 4px;
+    padding-top: 5px;
     padding-left: 0px;
     padding-right: 0px;
+    /*font-size: 16px;
+    color: #BADA55;
+    border: 2px solid #BADA55;
+    border-radius: 4em;
+    width: 3em;
+    text-align: center;
+    padding: 0.60em 0.5em;
+    min-width: 1em;*/
 }
 
 .resultpanel__wrapper__rightpanel__time {
