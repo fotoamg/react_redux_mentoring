@@ -39,31 +39,29 @@ class BigSearch extends React.Component {
     }
 
     render() {
-        return(
-            <nav className="bigsearch clearfix">
-                <div className="container clearfix">
-                    <div className="bigsearch__wrapper clearfix">
-                        <div className="bigsearch__wrapper__header clearfix">
-                            <Link to="/">
-                                netflixroulette
-                            </Link>
-                        </div>
-                        <div className="bigsearch__wrapper__searchbar clearfix">
-                            <p>FIND YOUR MOVIE</p>
-                            <p>
-                                <input type="text"
-                                    value={this.state.searchValue} onChange={(event) => this.handleSearchValueChange(event)}
-                                    onKeyDown={(event) => this.handleSearchValueKeyDown(event)}></input>
-                            </p>
-                            <p>
-                                <button onClick={(event) => this.props.searchClick(this.state.searchValue)}>
-                                    <Link to={`/search/${this.state.searchValue}`}>SEARCH</Link>
-                                </button>
-                            </p>
-                        </div>
+        return(           
+            <div className="bigsearch">
+                <div className="bigsearch__wrapper clearfix">
+                    <div className="bigsearch__header clearfix">
+                        <Link to="/">
+                            netflixroulette
+                        </Link>
+                    </div>
+                    <div className="bigsearch__searchbar clearfix">
+                        <p>FIND YOUR MOVIE</p>
+                        <p>
+                            <input type="text"
+                                value={this.state.searchValue} onChange={(event) => this.handleSearchValueChange(event)}
+                                onKeyDown={(event) => this.handleSearchValueKeyDown(event)}></input>
+                        </p>
+                        <p>
+                            <button onClick={(event) => this.props.searchClick(this.state.searchValue)}>
+                                <Link to={`/search/${this.state.searchValue}`}>SEARCH</Link>
+                            </button>
+                        </p>
                     </div>
                 </div>
-            </nav>
+            </div>
         )
     }
 }

@@ -47,37 +47,37 @@ class ResultPanel extends React.Component {
         return(
                 <nav className="resultpanel clearfix">
                         <div className="resultpanel__wrapper clearfix">
-                            <div className="resultpanel__wrapper__header clearfix">
+                            <div className="resultpanel__header clearfix">
                                 <Link to="/">
                                     netflixroulette
                                 </Link>
                             </div>
-                            <div className="resultpanel__wrapper__leftpanel clearfix">
+                            <div className="resultpanel__leftpanel clearfix">
                                 
                                 <p>
                                     <img src={this.props.item.image.medium}
-                                        width="185" alt={this.props.item.name}>                  
+                                        width="99%" alt={this.props.item.name}>                  
                                     </img>
                                 </p>
                             </div>
-                            <div className="resultpanel__wrapper__rightpanel clearfix">
+                            <div className="resultpanel__rightpanel clearfix">
                                 
                                 <p>
-                                    <span className="resultpanel__wrapper__rightpanel__title">
+                                    <span className="resultpanel__title">
                                         {this.props.item.name}
                                     </span>
                                         &nbsp;
-                                    {this.props.item.rating.average ? <span className="resultpanel__wrapper__rightpanel__score">{this.props.item.rating.average}</span> : ""}
+                                    {this.props.item.rating.average ? <span className="resultpanel__score">{this.props.item.rating.average}</span> : ""}
                                 </p>
                                 
-                                <span className="resultpanel__wrapper__rightpanel__time">
+                                <span className="resultpanel__time">
                                     <p>{(this.props.item.premiered) ? this.props.item.premiered.substr(0,4) : ""} &nbsp; {this.props.item.runtime}&nbsp;min</p>
                                 </span>
 
                                 <p>{this.renderHTML(this.props.item.summary)}</p>
 
                                 <p>&nbsp;</p>
-                                <p className="resultpanel__wrapper__rightpanel__cast">
+                                <p className="resultpanel__cast">
                                     {cast.length > 0 ? <span>Cast: </span> : ""}
                                     {cast.map((item, i) => <span key={i}> {item.person.name} &nbsp; </span>)}
                                 </p>

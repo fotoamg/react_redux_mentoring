@@ -7,13 +7,16 @@ import ResultGrid from './ResultGrid';
 function ResultPage(props) {
     return (
         <div>
-            <div className="row">
-                <div className="col-xs-10 col-xs-offset-1">
+            <div className="component-outer">
+                <div>
+                    <a href="top"></a>
+                </div>
+                <div className="component-wrapper">
                     <ResultPanel/>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-xs-10 col-xs-offset-1">
+            <div className="component-outer">
+                <div className="component-wrapper">
                     <ResultGrid/>  
                 </div>
             </div>

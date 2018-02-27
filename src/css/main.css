@@ -1,8 +1,41 @@
+
 body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
   }
+
+  
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 .clearfix:after {
     visibility: hidden;
@@ -18,7 +51,22 @@ body {
 .clearfix { display: block; }
 /* close commented backslash hack */
 
+.component-outer {
+    width: 100%;
+    margin: auto;
+}
 
+.component-wrapper {
+    width: 90%;
+    margin-left: 8.33333333%;
+    width: 83.33333333%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    min-width: 300px;
+}
 
 .bigsearch {
     /*background-image: url(http://media5.starkinsider.com/wordpress/wp-content/uploads/2018/01/Netflix-streaming-vs-traditional-cable.jpg?x28372);*/
@@ -39,20 +87,20 @@ body {
     color: #f76591;
 }
 
-.bigsearch__wrapper__header a, .bigsearch__wrapper__searchbar button a {
+.bigsearch__header a, .bigsearch__searchbar button a {
     text-decoration: none;
     color:#f76591;
 }
 
-.bigsearch__wrapper__searchbar {
+.bigsearch__searchbar {
     width: 90%;
     text-align: left;
     margin: auto;
     color: white;
 }
 
-.bigsearch__wrapper__searchbar input{
-    width: 80%;
+.bigsearch__searchbar input{
+    width: 99%;
     text-align: left;
     background-color: #202020;
     margin-bottom: 15px;
@@ -67,18 +115,8 @@ body {
   
 }
 
-.resultgrid__resultitem__wrapper {
-  /*  width: 189px;*/
-    height: 340px;
-    padding: 4px;
-    margin: auto;
-    /*vertical-align: middle;*/
-    text-align: center;
-    display: block;
-    float: left;
-}
 
-.resultgrid__item__wrapper__noresult {
+.resultgrid__noresult {
     border: 1px solid grey;
     color: grey;
     border-radius: 3px;
@@ -90,7 +128,7 @@ body {
     vertical-align: middle;
 }
 
-.resultgrid__item__wrapper__resulttitle {
+.resultgrid__resulttitle {
     border: none;
     color:black;
     border-radius: 3px;
@@ -103,20 +141,40 @@ body {
     vertical-align: middle;
 }
 
-.resultgrid__wrapper {    
-    width: 100%;
-    margin: auto;
-    color: black;
-}
-
-.resultgrid__item__wrapper {    
+.resultgrid__outer-wrapper {    
     max-width: 800px;
     margin: auto;
     color: black;
+    text-align: center;
+}
+
+.resultgrid__items-wrapper {
+    text-align: center;
+    margin: auto;
+} 
+
+  
+.resultgrid__inner-wrapper {
+    width: 100%;
+    /*max-width: 800px;*/
+    margin: auto;
+    color: black;
 }
 
 
-.resultgrid__resultitem__wrapper__headline {
+
+.griditem__wrapper {
+    /*  width: 189px;*/
+      height: 340px;
+      padding: 4px;
+      margin: auto;
+      /*vertical-align: middle;*/
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+  }
+
+.griditem__headline {
     display: block;
     float: none;
     padding-top: 5px;
@@ -124,23 +182,27 @@ body {
     color: black;
     width: 180px;
     /*height: 15px;*/
+    text-align: left;
+    
 }
 
-.resultgrid__resultitem__wrapper__title {
+.griditem__title {
     display: block;
     float: left;
-    height: 15px;
+    min-height: 15px;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
+    max-width: 150px;
+   
 }
 
-.resultgrid__resultitem__wrapper__premiered {
+.griditem__premiered {
     display: block;
     float: right;
-    height: 15px;
+   /* height: 15px;*/
 }
-.resultgrid__resultitem__wrapper__premiered span {
+.griditem__premiered span {
     border: solid 1px grey;
     border-radius: 3px;
     font-size: 8px;
@@ -148,7 +210,7 @@ body {
     padding-left: 3px;
     padding-right: 3px;
 }
-.resultgrid__resultitem__wrapper__genre {
+.griditem__genre {
     padding-top: 5px;
     text-align: left;
     font-weight: lighter;
@@ -163,6 +225,7 @@ body {
     background-color: #202020;
     margin: auto;
     color: #E0E0E0;
+    min-height: 360px;
 }
 
 
@@ -171,48 +234,56 @@ body {
     width: 100%;
     margin: auto;
     padding: 10px;
+    margin-top: 10px;
 }
 
 
-.resultpanel__wrapper__header {
+.resultpanel__header {
     width: 100%;
     margin: auto;
     color: #f76591;
 }
 
-.resultpanel__wrapper__header a {
+.resultpanel__header a {
     text-decoration: none;
     color:#f76591;
 }
 
-.resultpanel__wrapper__leftpanel {
-    width: 220px;
+.resultpanel__leftpanel {
+    max-width: 220px;
+    width: 32%;
     height: 300px;
     padding: 4px;
     /*vertical-align: middle;*/
     text-align: center;
-    display: block;
-    float: left;
+    display: inline-block;
+    vertical-align: top;
+    /*display: block;
+    float: left;*/
 }
 
-.resultpanel__wrapper__rightpanel {
-    max-width: 537px;
+.resultpanel__rightpanel {
+    /*max-width: 550px;*/
+    width: 68%;
+    max-width: 540px;
     min-height: 300px;
     padding: 4px;
     /*vertical-align: middle;*/
     text-align: left;
-    display: block;
-    float: right;
+    /*display: block;
+    float: right;*/
+    display: inline-block;
+    vertical-align: top;
 }
 
-.resultpanel__wrapper__rightpanel__title {
+.resultpanel__title {
     font-size: 20px;
     color: #f76591;
     vertical-align: middle;
     /*text-transform: uppercase;*/
 }
 
-.resultpanel__wrapper__rightpanel__score {
+.resultpanel__score {
     font-size: 16px;
     color: #BADA55;
     border: 2px solid #BADA55;
@@ -222,7 +293,7 @@ body {
     display: inline-block;
     text-align: center;
     vertical-align: middle;
-    padding-top: 5px;
+    padding-top: 6px;
     padding-left: 0px;
     padding-right: 0px;
     /*font-size: 16px;
@@ -235,12 +306,12 @@ body {
     min-width: 1em;*/
 }
 
-.resultpanel__wrapper__rightpanel__time {
+.resultpanel__time {
     font-weight: bold;
     color:white;
 }
 
-.resultpanel__wrapper__rightpanel__cast {
+.resultpanel__cast {
     font-weight: lighter;
     color: grey;
 }
@@ -250,6 +321,11 @@ body {
     background-color: #333333;
     color: #f76591;
     text-decoration: none;
-    padding: 15px;
+    padding: 5px 15px;
     margin: auto;
 }
+
+.footer {
+    margin-bottom: 10px;
+}
+

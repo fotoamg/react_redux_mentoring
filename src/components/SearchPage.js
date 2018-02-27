@@ -7,13 +7,13 @@ import ResultGrid from './ResultGrid';
 function SearchPage(props) {
     return (
         <div>
-            <div className="row">
-                <div className="col-xs-10 col-xs-offset-1">
+            <div className="component-outer">
+                <div className="component-wrapper">
                     <BigSearch/>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-xs-10 col-xs-offset-1">
+            <div className="component-outer">
+                <div className="component-wrapper">
                     <ResultGrid/>  
                 </div>
             </div>
