@@ -17,7 +17,7 @@ function ResultPage(props) {
             </div>
             <div className="component-outer">
                 <div className="component-wrapper">
-                    <ResultGrid/>  
+                    <EpisodeGrid/>  
                 </div>
             </div>
         </div>

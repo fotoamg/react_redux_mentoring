@@ -15,6 +15,8 @@ class ResultPanel extends React.Component {
             if ( this.props.match && this.props.match.params && this.props.match.params.resultId ) {
                 console.log("ResultPanel WillMount: " + this.props.match.params.resultId);
                 this.props.loadMovie(this.props.match.params.resultId);
+            } else {
+                console.log("ResultPanel WillMount NO resultID");
             }
             
         }
@@ -27,6 +29,8 @@ class ResultPanel extends React.Component {
                   this.props.match.params.resultId !== nextProps.match.params.resultId) {
                     console.log(" Nextprops not match by resultid! " + nextProps.match.params.resultId);
                     this.props.loadMovie(nextProps.match.params.resultId);
+            } else {
+                console.log("ResultPanel WillReceiveProps NO resultID");
             }
           }
 
