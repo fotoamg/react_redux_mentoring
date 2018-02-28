@@ -14,6 +14,7 @@ function App(props) {
            <Route exact path="/" component={SearchPage}/>
            <Route path="/search/:keyWord" component={SearchPage}/>
            <Route path="/result/:resultId" component={ResultPage}/>
+           <Route path="/episode/:episodeId" component={ResultPage}/>
         </Switch>
         <Footer/>
       </div>

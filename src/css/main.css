@@ -165,7 +165,8 @@ body {
 
 .griditem__wrapper {
     /*  width: 189px;*/
-      height: 340px;
+      /*height: 340px;*/
+      padding-top: 10px;
       padding: 4px;
       margin: auto;
       /*vertical-align: middle;*/

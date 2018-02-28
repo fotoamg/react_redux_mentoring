@@ -10,7 +10,8 @@ const searchReducer = (state = {...initialState} , action) => {
         case "MOVIE_LOADED":
             console.log("MOVIE_LOADED reducer", action.payload);
             state = {...state};
-            state.item = action.payload;
+            state.item = action.payload.movieResult;
+            state.results = action.payload.episodes;
             break;
         case "INIT_STATE":
             console.log("INIT_STATE reducer", action.payload);

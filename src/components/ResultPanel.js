@@ -94,10 +94,10 @@ const mapStateToProps = (state) => {
     };
 };
 
-/*const getRelatedResults = (term) => {
-    const url = `http://api.tvmaze.com/search/shows?q=${term}/episodes`;
+const getEpisodes = (term) => {
+    const url = `http://api.tvmaze.com/shows/${term}/episodes`;
     return axios.get(url)
-};*/
+};
 
 const getSingleResults = (term) => {
     const url = `http://api.tvmaze.com/shows/${term}?embed=cast`;
@@ -108,13 +108,17 @@ const mapDispatchToProps = (dispatch) => {
     return {
         loadMovie: (id) => {
             console.log("loadMovie ID: ", id);
-            return getSingleResults(id).then(response => {
-                console.log("MOVIE DATA:", response.data);
+            return getSingleResults(id).then(singleResult => Promise.all([singleResult, getEpisodes(id)]) )
+            .then(results => {
+                console.log("MOVIE LOAD DATA:", results);
                 dispatch({
                      type: "MOVIE_LOADED",
-                     payload: response.data
+                     payload: { movieResult: results[0].data,
+                                episodes: results[1].data
+                    }
                  });            
-              });  
+              });
+              
         }
     };
 };

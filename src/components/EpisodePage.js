@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ResultPanel from './ResultPanel';
-import EpisodeGrid from './EpisodeGrid';
+import ResultGrid from './ResultGrid';
 
 
 function ResultPage(props) {
@@ -17,7 +17,7 @@ function ResultPage(props) {
             </div>
             <div className="component-outer">
                 <div className="component-wrapper">
-                    <EpisodeGrid/>  
+                    <ResultGrid/>  
                 </div>
             </div>
         </div>
