@@ -11,18 +11,23 @@ class EpisodeGrid extends React.Component {
     }
 
     componentWillMount() {
-
-        if (!this.props.results || (typeof this.props.results === "undefined")) {
-            return this.nofound;
+        console.log("EpisodeGrid WILLLMOUNT props:", this. props);
+        if (!this.props.results || (typeof this.props.results === "undefined")
+         || (this.props.results.filter(fitem => fitem.image != null && fitem.image.medium != null ).length == 0 )
+            ) {
+                return this.nofound;
         }
     }
 
+
     render() {
-        
-        if (!this.props.results || (typeof this.props.results === "undefined")) {
-            return this.nofound;
+        console.log("EpisodeGrid RENDER props:", this. props);
+        if (!this.props.results || (typeof this.props.results === "undefined")
+            || (this.props.results.filter(fitem => fitem.image != null && fitem.image.medium != null ).length == 0 )
+           ) {
+               return this.nofound;
         }
-        
+            
         let routePath = this.props.match.path;
         let targetPage = "episode";
         const renderItems = () => this.props.results.filter(fitem => fitem.image != null && fitem.image.medium != null ).map((item, i) => <GridItem key={i} item={item} page={targetPage}></GridItem>);

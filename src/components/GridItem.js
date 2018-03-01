@@ -7,7 +7,7 @@ export function GridItem({item, page}) {
     return(
         <div className="griditem__wrapper clearfix">
             <div className="griditem__image clearfix">
-                <Link to={`/${page}/${item.id}#top`}>
+                <Link to={`/${page}/${item.id}`}>
                     <img src={item.image.medium}
                         width="185" alt={item.name}>                  
                     </img>

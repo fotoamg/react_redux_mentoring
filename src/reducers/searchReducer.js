@@ -17,6 +17,12 @@ const searchReducer = (state = {...initialState} , action) => {
             console.log("INIT_STATE reducer", action.payload);
             state = {...initialState};
             break;
+        case "EPISODE_LOADED":
+            console.log("EPISODE_LOADED reducer", action.payload);
+            state = {...state};
+            state.episode = action.payload;
+            console.log("EPISODE_LOADED reducer STATE:", state);
+            break;
     }
     return state;
 };

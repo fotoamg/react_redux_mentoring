@@ -30,7 +30,7 @@ class ResultPanel extends React.Component {
                     console.log(" Nextprops not match by resultid! " + nextProps.match.params.resultId);
                     this.props.loadMovie(nextProps.match.params.resultId);
             } else {
-                console.log("ResultPanel WillReceiveProps NO resultID");
+                console.log("ResultPanel WillReceiveProps NO different resultID");
             }
           }
 

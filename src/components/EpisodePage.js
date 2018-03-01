@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ResultPanel from './ResultPanel';
-import ResultGrid from './ResultGrid';
+import EpisodePanel from './EpisodePanel';
+import EpisodeGrid from './EpisodeGrid';
 
 
-function ResultPage(props) {
+function EpisodePage(props) {
     return (
         <div>
             <div className="component-outer">
@@ -12,7 +12,7 @@ function ResultPage(props) {
                     <a href="top"></a>
                 </div>
                 <div className="component-wrapper">
-                    <ResultPanel/>
+                    <EpisodePanel/>
                 </div>
             </div>
             <div className="component-outer">
@@ -24,4 +24,4 @@ function ResultPage(props) {
     )
 };
 
-export default ResultPage;
+export default EpisodePage;

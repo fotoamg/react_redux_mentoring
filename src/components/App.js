@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 
 import SearchPage from './SearchPage';
 import ResultPage from './ResultPage';
+import EpisodePage from './EpisodePage';
 import { Footer } from './Footer';
 
 
@@ -14,7 +15,7 @@ function App(props) {
            <Route exact path="/" component={SearchPage}/>
            <Route path="/search/:keyWord" component={SearchPage}/>
            <Route path="/result/:resultId" component={ResultPage}/>
-           <Route path="/episode/:episodeId" component={ResultPage}/>
+           <Route path="/episode/:episodeId" component={EpisodePage}/>
         </Switch>
         <Footer/>
       </div>
