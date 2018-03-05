@@ -11,9 +11,9 @@ class EpisodeGrid extends React.Component {
     }
 
     componentWillMount() {
-        console.log("EpisodeGrid WILLLMOUNT props:", this. props);
+        console.log("EpisodeGrid WILLLMOUNT props:", this.props);
         if (!this.props.results || (typeof this.props.results === "undefined")
-         || (this.props.results.filter(fitem => fitem.image != null && fitem.image.medium != null ).length == 0 )
+         || (this.props.results.filter(fitem => fitem.image != null && fitem.image.medium != null ).length === 0 )
             ) {
                 return this.nofound;
         }
@@ -21,23 +21,22 @@ class EpisodeGrid extends React.Component {
 
 
     render() {
-        console.log("EpisodeGrid RENDER props:", this. props);
+        console.log("EpisodeGrid RENDER props:", this.props);
         if (!this.props.results || (typeof this.props.results === "undefined")
-            || (this.props.results.filter(fitem => fitem.image != null && fitem.image.medium != null ).length == 0 )
+            || (this.props.results.filter(fitem => fitem.image != null && fitem.image.medium != null ).length === 0 )
            ) {
                return this.nofound;
         }
-            
-        let routePath = this.props.match.path;
+
         let targetPage = "episode";
         const renderItems = () => this.props.results.filter(fitem => fitem.image != null && fitem.image.medium != null ).map((item, i) => <GridItem key={i} item={item} page={targetPage}></GridItem>);
         
         let title = <div className="resultgrid__resulttitle"> Episodes: </div>;
                 return(
-                <div className="resultgrid__outer-wrapper clearfix">
-                        <div className="resultgrid__inner-wrapper clearfix">
+                <div className="resultgrid__outer-wrapper">
+                        <div className="resultgrid__inner-wrapper">
                             {title}
-                            <div className="resultgrid__items-wrapper clearfix">
+                            <div className="resultgrid__items-wrapper">
                                 {renderItems()}
                             </div>
                         </div>
