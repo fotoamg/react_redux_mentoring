@@ -10,7 +10,7 @@ export function ResultGrid(props) {
     }
     let routePath = props.match.path;
     let targetPage = "result";
-    const renderItems = () => props.results.filter(fitem => fitem.show.image != null && fitem.show.image.medium != null ).map((item, i) => <GridItem key={i} item={item.show} page={targetPage}></GridItem>);
+    const renderItems = () => props.results.filter(fitem => fitem.show.image != null && fitem.show.image.medium != null && fitem.show.status !== "In Development" ).map((item, i) => <GridItem key={i} item={item.show} page={targetPage}></GridItem>);
     
     let title = <div className="resultgrid__resulttitle"> {(routePath.indexOf("/search") == 0) ? " Results: " : ((routePath.indexOf("/result") == 0) ? " Related items: " : "") } </div>;
     
