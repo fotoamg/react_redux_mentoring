@@ -8,9 +8,6 @@ function ResultPage(props) {
     return (
         <div>
             <div className="component-outer">
-                <div>
-                    <a href="top"></a>
-                </div>
                 <div className="component-wrapper">
                     <ResultPanel/>
                 </div>

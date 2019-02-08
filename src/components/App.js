@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { render } from 'react-dom';
 
 import SearchPage from './SearchPage';
 import ResultPage from './ResultPage';

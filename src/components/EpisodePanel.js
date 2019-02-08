@@ -15,6 +15,7 @@ class EpisodePanel extends React.Component {
             if ( this.props.match && this.props.match.params && this.props.match.params.episodeId ) {
                 console.log("EpisodePanelWillMount: " + this.props.match.params.episodeId);
                 this.props.loadEpisode(this.props.match.params.episodeId);
+                window.scrollTo(0, 0);
             } else {
                 console.log("EpisodePanelWillMount NO episodeID");
             }
@@ -29,6 +30,7 @@ class EpisodePanel extends React.Component {
                   this.props.match.params.episodeId !== nextProps.match.params.episodeId) {
                     console.log(" Nextprops not match by episode! " + nextProps.match.params.episodeId);
                     this.props.loadEpisode(nextProps.match.params.episodeId);
+                    window.scrollTo(0, 0);
             } else {
                 console.log("EpisodePanelWillReceiveProps NO different episode");
             }
@@ -49,13 +51,13 @@ class EpisodePanel extends React.Component {
 
         return(
                 <nav className="resultpanel">
-                        <div className="resultpanel__wrapper clearfix">
-                            <div className="resultpanel__header clearfix">
+                        <div className="resultpanel__wrapper">
+                            <div className="resultpanel__header">
                                 <Link to="/">
                                     netflixroulette
                                 </Link>
                             </div>
-                            <div className="resultpanel__leftpanel clearfix">
+                            <div className="resultpanel__leftpanel">
                                 
                                 <p>
                                     <img src={this.props.item.image.medium}
@@ -63,7 +65,7 @@ class EpisodePanel extends React.Component {
                                     </img>
                                 </p>
                             </div>
-                            <div className="resultpanel__rightpanel clearfix">
+                            <div className="resultpanel__rightpanel">
                                 
                                 <p>
                                     <span className="resultpanel__title">

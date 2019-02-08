@@ -23,6 +23,10 @@ const searchReducer = (state = {...initialState} , action) => {
             state.episode = action.payload;
             console.log("EPISODE_LOADED reducer STATE:", state);
             break;
+        default:
+            console.log("default CASE reducer", action.payload);
+            break;
+
     }
     return state;
 };

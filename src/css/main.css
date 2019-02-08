@@ -173,6 +173,7 @@ body {
       text-align: center;
       display: inline-block;
       vertical-align: top;
+      position: relative;
   }
 
 .griditem__headline {
@@ -184,6 +185,7 @@ body {
     width: 180px;
     /*height: 15px;*/
     text-align: left;
+    /*height: 20px;*/
     
 }
 
@@ -195,13 +197,17 @@ body {
     font-weight: bold;
     font-size: 12px;
     max-width: 150px;
-   
 }
 
 .griditem__premiered {
     display: block;
     float: right;
    /* height: 15px;*/
+   /*position: absolute;
+   top: 110px;
+   left: 165px;*/
+   margin-top: -6px;
+   margin-right: -2px;
 }
 .griditem__premiered span {
     border: solid 1px grey;

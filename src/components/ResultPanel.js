@@ -49,14 +49,14 @@ class ResultPanel extends React.Component {
         let cast = this.props.item._embedded ? this.props.item._embedded.cast : [];
         console.log("cast ", cast);
         return(
-                <nav className="resultpanel clearfix">
-                        <div className="resultpanel__wrapper clearfix">
-                            <div className="resultpanel__header clearfix">
+                <nav className="resultpanel">
+                        <div className="resultpanel__wrapper">
+                            <div className="resultpanel__header">
                                 <Link to="/">
                                     netflixroulette
                                 </Link>
                             </div>
-                            <div className="resultpanel__leftpanel clearfix">
+                            <div className="resultpanel__leftpanel">
                                 
                                 <p>
                                     <img src={this.props.item.image.medium}
@@ -64,7 +64,7 @@ class ResultPanel extends React.Component {
                                     </img>
                                 </p>
                             </div>
-                            <div className="resultpanel__rightpanel clearfix">
+                            <div className="resultpanel__rightpanel">
                                 
                                 <p>
                                     <span className="resultpanel__title">

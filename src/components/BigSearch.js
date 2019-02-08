@@ -41,13 +41,13 @@ class BigSearch extends React.Component {
     render() {
         return(           
             <div className="bigsearch">
-                <div className="bigsearch__wrapper clearfix">
-                    <div className="bigsearch__header clearfix">
+                <div className="bigsearch__wrapper">
+                    <div className="bigsearch__header">
                         <Link to="/">
                             netflixroulette
                         </Link>
                     </div>
-                    <div className="bigsearch__searchbar clearfix">
+                    <div className="bigsearch__searchbar">
                         <p>FIND YOUR MOVIE</p>
                         <p>
                             <input type="text"

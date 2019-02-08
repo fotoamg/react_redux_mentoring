@@ -12,13 +12,13 @@ export function ResultGrid(props) {
     let targetPage = "result";
     const renderItems = () => props.results.filter(fitem => fitem.show.image != null && fitem.show.image.medium != null && fitem.show.status !== "In Development" ).map((item, i) => <GridItem key={i} item={item.show} page={targetPage}></GridItem>);
     
-    let title = <div className="resultgrid__resulttitle"> {(routePath.indexOf("/search") == 0) ? " Results: " : ((routePath.indexOf("/result") == 0) ? " Related items: " : "") } </div>;
+    let title = <div className="resultgrid__resulttitle"> {(routePath.indexOf("/search") === 0) ? " Results: " : ((routePath.indexOf("/result") === 0) ? " Related items: " : "") } </div>;
     
     return(
-        <div className="resultgrid__outer-wrapper clearfix">
-                <div className="resultgrid__inner-wrapper clearfix">
+        <div className="resultgrid__outer-wrapper">
+                <div className="resultgrid__inner-wrapper">
                     {title}
-                    <div className="resultgrid__items-wrapper clearfix">
+                    <div className="resultgrid__items-wrapper">
                         {renderItems()}
                     </div>
                 </div>
